@@ -17,6 +17,9 @@ export default class Doctores extends Component {
             })
         })
     }
+    componentDidMount = () => {
+        this.loadDoctores();
+    }
     componentDidUpdate = (oldProps) => {
         if(oldProps.idHospital !== this.props.idHospital){
             console.log("props cambiado");

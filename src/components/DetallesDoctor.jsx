@@ -14,6 +14,9 @@ export default class DetallesDoctor extends Component {
             })
         })
     }
+    componentDidMount = () => {
+        this.loadDoctor();
+    }
     componentDidUpdate = (oldProps) => {
         if(oldProps.idDoctor !== this.props.idDoctor){
             this.loadDoctor();
