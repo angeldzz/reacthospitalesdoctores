@@ -30,6 +30,7 @@ export default class Doctores extends Component {
   render() {
     return (
       <div>
+        <h1>Doctores Hospital {this.props.idHospital}</h1>
         <table className='table table-striped table-info'>
             <thead>
                 <tr>
@@ -59,7 +60,7 @@ export default class Doctores extends Component {
             </tbody>
         </table>
             {
-                    this.state.iddoctor != "" &&
+                    this.state.iddoctor !== "" &&
                     <DetallesDoctor idDoctor={this.state.iddoctor}/>
             }
       </div>
