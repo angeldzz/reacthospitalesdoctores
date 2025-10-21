@@ -18,10 +18,10 @@ export default class Doctores extends Component {
         })
     }
     componentDidUpdate = (oldProps) => {
-        this.setState({idDoctor:""})
         if(oldProps.idHospital !== this.props.idHospital){
             console.log("props cambiado");
             this.loadDoctores();
+            this.setState({iddoctor:""})
         }
     }
   render() {
@@ -56,7 +56,7 @@ export default class Doctores extends Component {
             </tbody>
         </table>
             {
-                    this.state.iddoctor !== "" &&
+                    this.state.iddoctor != "" &&
                     <DetallesDoctor idDoctor={this.state.iddoctor}/>
             }
       </div>
