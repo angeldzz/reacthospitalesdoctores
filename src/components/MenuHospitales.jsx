@@ -45,7 +45,6 @@ export default class MenuHospitales extends Component {
                                 <NavLink
                                     className="nav-link"
                                     to="/"
-                                    end
                                 >
                                     Home
                                 </NavLink>
@@ -53,8 +52,15 @@ export default class MenuHospitales extends Component {
                             <li className="nav-item">
                                 <NavLink
                                     className="nav-link"
+                                    to="/hospitales"
+                                >
+                                    List Hospital
+                                </NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink
+                                    className="nav-link"
                                     to="/createHospital"
-                                    end
                                 >
                                     Create Hospital
                                 </NavLink>

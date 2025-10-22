@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Global from '../Global'
+import { Navigate } from 'react-router-dom'
 
 export default class CreateHospitales extends Component {
     state = {
-        mensaje: ""
+        mensaje: "",
+        status:false,
     }
     url = Global.apiHospitales
     cajaId = React.createRef();
@@ -27,7 +29,8 @@ export default class CreateHospitales extends Component {
         }
         axios.post(this.url+request,hospital).then(response => {
             this.setState({
-                mensaje:`Hospital ${hospital.nombre} insertado con exito`
+                mensaje:`Hospital ${hospital.nombre} insertado con exito`,
+                status:true
             })
         })
         console.log("Hospital Creado");
@@ -48,8 +51,12 @@ export default class CreateHospitales extends Component {
                     <input className='form-control' type="number" ref={this.cajaTelefono}/>
                     <label className='form-label'>Inserte Camas</label>
                     <input className='form-control' type="number" ref={this.cajaCamas}/>
-                    <button onClick={this.insertHospital}>Create Hospital</button>
+                    <button className='m-4 btn btn-primary' onClick={this.insertHospital}>Create Hospital</button>
                 </form>
+                {
+                    this.state.status === true &&
+                    <Navigate to="/hospitales"/>
+                }
             </div>
         )
     }
